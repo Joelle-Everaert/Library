@@ -15,7 +15,7 @@ class BooksController extends Controller
     public function index()
     {
         $books = Books::all();
-        return view('welcome', compact('books'));
+        return view('dashboard', compact('books'));
     }
 
     /**
@@ -47,6 +47,21 @@ class BooksController extends Controller
             'category'=> 'required',
             'quantity'=> 'required',
         ]);
+        
+        Books::create($request->all());
+
+        
+        // Books::create([
+        //     'title'=>$request->title,
+        //     'author'=>$request->author,
+        //     'category'=>$request->category,
+        //     'quantity'=>$request->quantity,
+        // ]);
+
+        return redirect()->route('books.index');
+
+
+
     }
 
     /**
