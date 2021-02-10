@@ -10,7 +10,6 @@ class BookListController extends Controller
     {
         $books = Books::all();
         return view('welcome', compact('books'));
-
-       
     }
+        
 }

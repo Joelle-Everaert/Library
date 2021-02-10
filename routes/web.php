@@ -13,10 +13,16 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// USER
+// --------------
 Route::get(
     '/',
     [BookListController::class, 'index']
 )->name('index');
+
+Route::resource('booksUser', BookListController::class);
+
+
 
 
 Route::get('/dashboard', function () {

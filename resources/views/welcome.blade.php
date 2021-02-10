@@ -56,6 +56,9 @@
                           <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Quantity
                           </th>
+                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Show
+                          </th>
                             </tr>
                       </thead>
                       
@@ -80,6 +83,9 @@
                           <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
                             {{$book->quantity}}
                           </td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
+                          <a href="{{ route('books.show', $book->id) }}">show</a>
+                        </td>
     
                         </tr>
              @endforeach

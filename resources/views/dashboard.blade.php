@@ -26,6 +26,14 @@
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                         Quantity
                                     </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Edit
+                                    </th>
+                                    <th scope="col"
+                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                        Delete
+                                    </th>
                                 </tr>
                             </thead>
 
@@ -51,6 +59,16 @@
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
                                         {{$book->quantity}}
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
+                                        <a href="{{route('books.edit', $book->id)}}"> edit</a>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
+                                        <form action="{{ route('books.destroy', $book->id)}}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit">delete</button>
+                                        </form>
                                     </td>
 
                                 </tr>

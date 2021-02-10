@@ -27,7 +27,7 @@ class BooksController extends Controller
     {
         $user=$request->user();
         if($user){
-            return view('addbooks.createBook', compact('user'));
+            return view('books.create', compact('user'));
         }else{
             return redirect()->route('books.index');
         }
@@ -50,17 +50,7 @@ class BooksController extends Controller
         
         Books::create($request->all());
 
-        
-        // Books::create([
-        //     'title'=>$request->title,
-        //     'author'=>$request->author,
-        //     'category'=>$request->category,
-        //     'quantity'=>$request->quantity,
-        // ]);
-
         return redirect()->route('books.index');
-
-
 
     }
 
@@ -70,20 +60,32 @@ class BooksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    // public function show(Books $book)
+    // {
+    //     return view('books.show', compact('book'));
+        
+    // }
+    public function show(Books $book)
     {
-        //
-    }
+        $category = Books::where('category', '=', $book->category)->inRandomOrder()->take(3)->get();
+        $author = Books::where('author', '=', $book->author)->inRandomOrder()->take(3)->get();
+        return view('books.show', [
+            'book' => $book,
+            'category' => $category,
+            'author' => $author,
 
+        ]);
+    }
     /**
      * Show the form for editing the specified resource.
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Books $book)
     {
-        //
+        // retourne la vue
+        return view('books.edit', compact('book'));
     }
 
     /**
@@ -93,9 +95,17 @@ class BooksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Books $book)
     {
-        //
+        $request->validate([
+            'title'=>'required',
+            'author'=>'required',
+            'category'=>'required',
+            'quantity'=>'required',
+        ]);
+
+        $book->update($request->all());
+        return redirect()->route('books.index');
     }
 
     /**
@@ -104,8 +114,9 @@ class BooksController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Books $book)
     {
-        //
+        $book->delete($book);
+        return redirect()->route('books.index');
     }
 }
