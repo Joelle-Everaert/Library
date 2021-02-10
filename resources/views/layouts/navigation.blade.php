@@ -11,7 +11,7 @@
                 </div> --}}
 
                 <!-- Navigation Links -->
-                @auth
+            @auth
                 <x-nav-link href="{{route('books.index')}}">
                     {{ __('Library\'s Dashboard') }}
                 </x-nav-link>
