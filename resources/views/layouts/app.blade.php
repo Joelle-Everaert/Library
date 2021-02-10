@@ -17,15 +17,18 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
     </head>
     <body>
+    <header>
         @include('components.header')
         {{-- @include('layouts.navigation') --}}
+    </header>
 
-                  
             <!-- Page Content -->
             <main>
                 @yield('content')
             </main>
+<footer>
        @include('components.footer')
+</footer> 
     </body>
 </html>
 
