@@ -19,7 +19,6 @@ Route::get(
     '/',
     [BookListController::class, 'index']
 )->name('index');
-
 Route::resource('booksUser', BookListController::class);
 
 
@@ -35,4 +34,12 @@ require __DIR__.'/auth.php';
 Route::resource('books', BooksController::class);
 
 
+// afficher formulaire
+Route::get('/contact', function(){
+    return view('books.contact');
+})->name('contact');
+
+Route::get('/suggestion', function(){
+    return view('books.suggestion');
+})->name('suggestion');
 

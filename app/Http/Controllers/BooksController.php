@@ -119,4 +119,6 @@ class BooksController extends Controller
         $book->delete($book);
         return redirect()->route('books.index');
     }
+
+    
 }

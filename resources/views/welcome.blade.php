@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
         <meta charset="utf-8">
@@ -19,23 +19,12 @@
                 @font-sans;
             }
         </style>
-    </head>
+    </head> --}}
  
-
-    <body>
-      <h1 class="text-6xl bg-gray-100 ">Joelle's Library</h1>
-        <div class="relative flex items-top justify-center bg-gray-900 dark:bg-gray-500 sm:items-center sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-black underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-black underline">Login</a>
-                    @endauth
-                </div>
-            @endif
-              </div>
-              
+<x-app-layout>
+    {{-- <body>
+      <header class="text-gray-600 body-font"> @include('components.header')</header>   --}}
+      @section('content')      
           <div class=" max-w-6xl mx-auto py-10 sm:px-6 lg:px-8 ">
             <div class="flex flex-col">
               <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -90,7 +79,10 @@
                         </tr>
              @endforeach
         
-        </div>
-     
-    </body>
-</html>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          @endsection
+</x-app-layout>

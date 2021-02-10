@@ -1,5 +1,5 @@
+{{-- <header>@include('components.header')</header> --}}
 <x-app-layout>
-
     @section('content')
 
     <div class="inline-flex items-center px-4 py-3 ">

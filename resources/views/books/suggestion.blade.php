@@ -2,13 +2,13 @@
 
     @section('content')
 
-
+    <h1 class="flex text-xl ml-10"> Please use this form to send me your recommandation for new book </h1>
     <div class=" flex items-center justify-center mt-10">
-        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action=" {{route('books.store')}} " method="POST">
-            @csrf
-            @method('POST')
+
+        <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+
             <br>
-            <h1 class="block text-gray-700 font-bold mb-2 text-xl text-center px-72">NEW BOOK</h1>
+            <h1 class="block text-gray-700 font-bold mb-2 text-xl text-center px-72">Suggestion</h1>
             <br>
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
@@ -16,8 +16,7 @@
                 </label>
                 <input
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name="title" id="name" type="text" placeholder="title" required>
-            </div>
+                    name="title" id="name" type="text"> </div>
 
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
@@ -25,8 +24,7 @@
                 </label>
                 <input
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name="author" type="text" placeholder="author's name" required>
-            </div>
+                    name="author" type="text"> </div>
 
             <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
@@ -34,17 +32,7 @@
                 </label>
                 <input
                     class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name="category" type="text" placeholder="category" required>
-            </div>
-
-            <div class="mb-4">
-
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="name">
-                    Quantity
-                </label>
-                <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                    name="quantity" type="text" placeholder="quantity" required>
+                    name="category" type="text">
             </div>
 
             <div class="flex items-center justify-between">
@@ -53,12 +41,10 @@
                     type="submit">
                     Send
                 </button>
-                <div class="inline-flex items-center px-4 py-3 ">
-                    <a href="{{ route('books.index') }}"
-                        class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">back</a>
-                </div>
             </div>
+
         </form>
+
     </div>
 
 
