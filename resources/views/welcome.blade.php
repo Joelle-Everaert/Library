@@ -39,13 +39,13 @@
                                         <div class="flex items-center">
                                             <div class="ml-1">
                                                 <div class="text-sm font-medium text-gray-900">
-                                                    {{$book->title}}
+                                                    {{implode(' ', (array_reverse(explode(', ',$book->title))))}}
                                                 </div>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="text-sm text-gray-900">{{$book->author}}</div>
+                                        <div class="text-sm text-gray-900">{{implode(' ', (array_reverse(explode(', ',$book->author))))}}</div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="text-sm text-gray-900">{{$book->category}}</div>
@@ -68,4 +68,5 @@
     </div>
 
     @endsection
+ 
 </x-app-layout>

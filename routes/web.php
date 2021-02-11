@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Books;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +21,8 @@ Route::get(
     '/',
     [BookListController::class, 'index']
 )->name('index');
+
+
 Route::resource('booksUser', BookListController::class);
 
 

@@ -3,80 +3,72 @@
     @section('content')
 
     <div class="inline-flex items-center px-4 py-3 ">
-        <a href="{{ route('booksUser.index') }}"
-            class="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">Return to the list</a>
+        @auth
+        <a href="{{ route('books.index') }}" class="bg-gray-200 hover:bg-gray-300 text-black py-2 px-4 rounded">Return to the list</a>
+       @else
+        <a href="{{ route('booksUser.index') }}" class="bg-gray-200 hover:bg-gray-300 text-black py-2 px-4 rounded">Return to the list</a>
+        @endauth
     </div>
 
-
-    <div class="flex flex-col items-center">
-        <div class="justify-center my-2 overflow-x-auto sm:-mx-6 lg:-mx-8 border-double border-4">
-            <div class="max-w-sm rounded overflow-hidden shadow-lg">
-
-                <div class="px-6 py-4">
-                    <div class="font-bold text-2xl mb-4">{{$book->title}}</div>
-                    <p class="text-gray-700 text-xl">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt at blablabla.
-                    </p>
-                    <div class="font-bold text-l italic mb-4 pt-5">{{$book->author}}</div>
-                </div>
-
-                <div class="px-6 py-4">
-                    <span
-                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 ml-28">{{$book->category}}</span>
-                </div>
+    
+    <div class="flex flex-row justify-center pb-10 h-80 w-auto">
+        <div class="flex bg-white shadow-lg rounded-lg overflow-hidden h-full w-1/2">
+          <div class="w-1/2 bg-cover bg-center" style="background-image: url('https://assets.entrepreneur.com/content/3x2/2000/20191219170611-GettyImages-1152794789.jpeg')">
+          </div> 
+          <div class="w-2/3 p-4 flex justify-center flex-col ">
+            <h1 class="text-gray-900 text-2xl">{{implode(' ', (array_reverse(explode(', ',$book->title))))}}</h1>
+            <p class="mt-6 text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit In odit exercitationem fuga id nam quia</p>
+            <div class="flex mt-2">
+                <div class=" text-l italic mb-4 pt-5">{{$book->author}}</div>
             </div>
+            <div class="flex justify-between mt-3">
+              <h1 class=" bg-gray-200 rounded px-3 py-2 uppercase text-sm font-semibold text-gray-700">{{$book->category}}</h1>
+              <button class="px-3 py-2 bg-gray-800 text-white text-xs uppercase rounded">borrow</button>
+            </div>
+          </div>
         </div>
-    </div>
-
-
+      </div>
+   
     {{-- SUGGESTION --}}
-    <h1 class="text-2xl underline ml-3"> A little suggestion</h1>
-    <p class="text-l  ml-3">By category</p>
-<div class="flex flex-row justify-center">
-    @foreach($category as $book)
-    <div class="flex justify-center ">
-        <div class="flex items-center mx-5">
-            <div class="flex  bg-white shadow-md p-4 rounded-md">
-
-                <div class="flex flex-col justify-between">
-                    <div data-placeholder class="mb-2 h-5   bg-gray-200" style="width: 200px">
-                        {{$book->title}}
-                    </div>
-                    <div data-placeholder class="h-10   bg-gray-200" style="width: 200px">
-                        {{$book->author}}
-                    </div>
-                    <div data-placeholder class="h-10   bg-gray-200" style="width: 200px">
-                        {{$book->category}}
-                    </div>
-                </div>
+    <h1 class="flex justify-center text-xl text-gray-400 uppercase"> Suggestion with the same category</h1>
+  
+    <div class="flex flex-row justify-center py-10 h-96 w-auto">
+        <div class="flex bg-white shadow-lg rounded-lg overflow-hidden h-full w-1/2">
+            @foreach($category as $book)
+            <div class="w-2/3 p-4 flex justify-center flex-col ">
+            <h1 class="text-gray-900 text-2xl">{{implode(' ', (array_reverse(explode(', ',$book->title))))}}</h1>
+            <p class="mt-6 text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit In odit exercitationem fuga id nam quia</p>
+            <div class="flex mt-2">
+                <div class=" text-l italic mb-4 pt-5">{{$book->author}}</div>
             </div>
-        </div>
-    </div>
-    @endforeach
-</div>
-<p class="text-l  ml-3">By author</p>
-<div class="flex flex-row justify-center">
-    @foreach($author as $book)
-    <div class="flex justify-center ">
-        <div class="flex items-center mx-5">
-            <div class="flex  bg-white shadow-md p-4 rounded-md">
-
-                <div class="flex flex-col justify-between">
-                    <div data-placeholder class="mb-2 h-5   bg-gray-200" style="width: 200px">
-                        {{$book->title}}
-                    </div>
-                    <div data-placeholder class="h-10   bg-gray-200" style="width: 200px">
-                        {{$book->author}}
-                    </div>
-                    <div data-placeholder class="h-10   bg-gray-200" style="width: 200px">
-                        {{$book->category}}
-                    </div>
-                </div>
+            <div class="flex justify-between mt-3">
+              <h1 class=" bg-gray-200 rounded px-3 py-2 uppercase text-sm font-semibold text-gray-700">{{$book->category}}</h1>
+              <button class="px-3 py-2 bg-gray-800 text-white text-xs uppercase rounded">borrow</button>
             </div>
+          </div>
+          @endforeach
         </div>
-    </div>
-    @endforeach
-</div>
+      </div>
+
+      <h1 class="flex justify-center text-xl text-gray-400 uppercase"> Suggestion with the same author</h1>
+    <div class="flex flex-row justify-center pb-10 h-80 w-auto">
+        <div class="flex bg-white shadow-lg rounded-lg overflow-hidden h-full w-1/2">
+            @foreach($author as $book)
+            <div class="w-1/3 p-4 flex justify-center flex-col ">
+            <h1 class="text-gray-900 text-2xl">{{implode(' ', (array_reverse(explode(', ',$book->title))))}}</h1>
+            <p class="mt-6 text-gray-600 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit In odit exercitationem fuga id nam quia</p>
+            <div class="flex mt-2">
+                <div class=" text-l italic mb-4 pt-5">{{$book->author}}</div>
+            </div>
+            <div class="flex justify-between mt-3">
+              <h1 class=" bg-gray-200 rounded px-3 py-2 uppercase text-sm font-semibold text-gray-700">{{$book->category}}</h1>
+              <button class="px-3 py-2 bg-gray-800 text-white text-xs uppercase rounded">borrow</button>
+            </div>
+          </div>
+          @endforeach
+        </div>
+      </div>
+
 
 
     @endsection

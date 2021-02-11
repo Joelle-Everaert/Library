@@ -84,10 +84,21 @@ class BooksController extends Controller
      */
     public function edit(Books $book)
     {
-        // retourne la vue
         return view('books.edit', compact('book'));
     }
 
+    // public function edit(Request $request, Books $book)
+    // {   
+    //     $user=$request->user();
+    //     if($user){
+    //         return view('books.edit', compact('user'));
+    //     }else{
+    //         return redirect()->route('books.index');
+    //     }
+    // }
+
+
+    
     /**
      * Update the specified resource in storage.
      *
@@ -120,5 +131,6 @@ class BooksController extends Controller
         return redirect()->route('books.index');
     }
 
+    
     
 }

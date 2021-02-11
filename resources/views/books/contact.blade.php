@@ -3,10 +3,10 @@
     @section('content')
 
 
-<form id="contact-me" class="w-full mx-auto max-w-3xl bg-white shadow p-8 text-gray-700 mt-20 ">
+<form id="contact-me" class="mb-20 w-full mx-auto max-w-3xl bg-white shadow p-8 text-gray-700 mt-20 ">
 
 
-    <h2 class="w-full my-2 text-3xl font-bold leading-tight my-5">Contact form</h2>
+    <h2 class="w-full text-3xl text-center leading-tight my-5">Contact form</h2>
     <!-- name field -->
     <div class="flex flex-wrap mb-6">
         <div class="relative w-full appearance-none label-floating">
@@ -37,8 +37,8 @@
         </div>
     </div>
 
-    <div class="">
-        <button class="w-full shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-black font-bold py-2 px-4 rounded"
+    <div class="pl-48">
+        <button class="w-80 mr-100 shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-black py-2 px-4 rounded"
             type="submit">
             Send
         </button>

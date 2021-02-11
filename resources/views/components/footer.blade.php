@@ -7,7 +7,7 @@
         <div class="flex justify-center mt-6">
             <div class="bg-gray-300 rounded-lg">
                 <div class="flex flex-wrap justify-between md:flex-row">
-                    <input type="email" class=" m-1 p-2 appearance-none text-white text-sm focus:outline-none" placeholder="Enter your email">
+                    <input type="email" class=" m-1 p-2 appearance-none text-gray-400 text-sm focus:outline-none" placeholder="Enter your email">
                     <button class="w-full m-1 p-2 text-sm bg-gray-800 rounded-lg font-semibold uppercase lg:w-auto">subscribe</button>
                 </div>
             </div>
@@ -22,7 +22,7 @@
                   <a href="#" class="text-gray-300 px-4 text-sm">About</a>
                   <a href="#" class="text-gray-300 px-4 text-sm">Blog</a>
                   <a href="#" class="text-gray-300 px-4 text-sm">News</a>
-                  <a href="#" class="text-gray-300 px-4 text-sm">Contact</a>
+                  <a href="{{route('contact')}}" class="text-gray-300 px-4 text-sm">Contact</a>
                   </div>
             </div>
         </div>
