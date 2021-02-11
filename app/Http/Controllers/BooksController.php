@@ -19,18 +19,6 @@ class BooksController extends Controller
         return view('dashboard',['books'=>$books]);
     }
 
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-     public function pagination()
-     {
-         return view('dashboard', [
-            'books' => DB::table('books')->paginate(15)
-         ]);
-     }
     /**
      * Show the form for creating a new resource.
      *

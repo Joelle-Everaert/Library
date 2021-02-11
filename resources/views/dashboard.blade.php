@@ -1,7 +1,7 @@
 <x-app-layout>
 
     @section('content')
-
+    
     <div class=" max-w-6xl mx-auto py-10 sm:px-6 lg:px-8 ">
         <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
