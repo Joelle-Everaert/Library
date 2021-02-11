@@ -65,6 +65,7 @@
                 </div>
             </div>
         </div>
+        <span>{{$books->links()}}</span>
     </div>
 
     @endsection

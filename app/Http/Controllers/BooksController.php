@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Books;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class BooksController extends Controller
 {
@@ -14,10 +15,22 @@ class BooksController extends Controller
      */
     public function index()
     {
-        $books = Books::all();
-        return view('dashboard', compact('books'));
+        $books = Books::paginate(15);
+        return view('dashboard',['books'=>$books]);
     }
 
+     /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+
+     public function pagination()
+     {
+         return view('dashboard', [
+            'books' => DB::table('books')->paginate(15)
+         ]);
+     }
     /**
      * Show the form for creating a new resource.
      *
@@ -132,5 +145,5 @@ class BooksController extends Controller
     }
 
     
-    
+
 }

@@ -1,4 +1,4 @@
-<div class="flex justify-center text-gray-200 px-4 bg-gray-800">
+<div class="bottom-0 w-full flex justify-center text-gray-200 px-4 bg-gray-800">
     <div class="container py-6">
         <h1 class="text-center text-gray-400 text-xl">
             Join 31,000+ other and never miss <br> out on new books

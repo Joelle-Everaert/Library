@@ -82,8 +82,13 @@
                                 @endforeach
                              </tbody>
                         </table>
-
-
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span>{{$books->links()}}</span>
+    </div>
+                        
   @endsection
 
 </x-app-layout>
