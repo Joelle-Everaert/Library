@@ -53,7 +53,7 @@
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
                                         {{$book->quantity}}
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-400">
                                         <a href="{{ route('books.show', $book->id) }}">show</a>
                                     </td>
                                 </tr>

@@ -64,17 +64,17 @@
                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
                                         {{$book->quantity}}
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
-                                        <a href="{{route('books.show', $book->id)}}"> show</a>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-400">
+                                        <a href="{{route('books.show', $book->id)}}">show</a>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
-                                        <a href="{{route('books.edit', $book->id)}}"> edit</a>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-green-800">
+                                        <a href="{{route('books.edit', $book->id)}}">edit</a>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-900">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-center">
                                         <form action="{{ route('books.destroy', $book->id)}}" method="post">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit">delete</button>
+                                            <button class="text-red-800" type="submit">delete</button>
                                         </form>
                                     </td>
 
